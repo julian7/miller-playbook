@@ -1,0 +1,5 @@
+- import_playbook: site/common.yml
+- import_playbook: site/nginx.yml
+- import_playbook: site/cncjs.yml
+- import_playbook: site/octoprint.yml
+- import_playbook: site/motion.yml
