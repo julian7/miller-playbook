@@ -1,0 +1,15 @@
+[Unit]
+Description=OctoPrint
+Documentation=https://octoprint.org/
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+Group=pi
+WorkingDirectory=/home/pi
+ExecStart=/home/pi/OctoPrint/bin/octoprint serve
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

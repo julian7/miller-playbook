@@ -1,0 +1,10 @@
+- name: pip and virtualenv
+  apt:
+    name:
+    - python3-virtualenv
+- name: virtualenv for octoprint
+  pip:
+    name: OctoPrint
+    virtualenv: /home/pi/OctoPrint
+  become: yes
+  become_user: pi

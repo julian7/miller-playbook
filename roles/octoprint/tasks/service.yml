@@ -1,0 +1,15 @@
+- name: octoprint.service file
+  copy:
+    src: files/systemd-octoprint.service
+    dest: /etc/systemd/system/octoprint.service
+    owner: root
+    group: root
+    mode: "0644"
+  notify:
+  - daemon-reload
+  - restart-octoprint
+- name: octoprint service
+  service:
+    name: octoprint
+    enabled: yes
+    state: started

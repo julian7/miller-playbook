@@ -1,2 +1,11 @@
----
-# handlers file for roles/octoprint
+- name: daemon-reload
+  systemd:
+    daemon_reload: true
+- name: restart-nginx
+  service:
+    name: nginx
+    state: restarted
+- name: restart-octoprint
+  service:
+    name: octoprint
+    state: restarted

@@ -1,2 +1,6 @@
----
-# tasks file for roles/octoprint
+- name: install octoprint
+  import_tasks: virtualenv.yml
+- name: octoprint nginx config
+  import_tasks: nginx.yml
+- name: octoprint service
+  import_tasks: service.yml
