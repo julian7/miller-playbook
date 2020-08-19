@@ -1,0 +1,14 @@
+- name: apt-get upgrade
+  apt:
+    update_cache: true
+    upgrade: "yes"
+- name: common packages
+  apt:
+    name:
+    - build-essential
+    - git
+    - htop
+    - iotop
+    - nmon
+    - lsof
+    - tmux

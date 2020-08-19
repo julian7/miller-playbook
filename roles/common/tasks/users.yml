@@ -1,0 +1,33 @@
+- name: pi user
+  user:
+    name: pi
+    comment: PI
+    uid: 1000
+    group: pi
+    shell: /bin/bash
+    append: true
+    groups:
+    - adm
+    - dialout
+    - cdrom
+    - sudo
+    - audio
+    - video
+    - plugdev
+    - games
+    - users
+    - input
+    - netdev
+    - spi
+    - i2c
+    - gpio
+    password: "$6$F6GZp0CyaBg6DoSD$sTGsLznWs.XZ8Qq.Md9irsVVqW2TLHi5HF6fQz0P.FGoZMkhzpoTeIFQg3xqr6uuJTXrQMu97damacdjIihaZ1"
+- name: pi authorized_keys
+  authorized_key:
+    user: pi
+    validate_certs: no
+    key: |
+      ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDBXty8KbvMYu+D7ELKRWOyqu6YJhvtDevZMrkVmvkgJwGfXl1BIKCAxFSb3snOdwIg6R+uIkeZ+BnE/2FAPNLbwyRynRrXPRs1tAIp3kbD3TUnWeAqK5coBzcE9UYxhBrHPBmH1/7mveOctRQmJmilr2+j+xlwH2ABh0wyTReX/5IrSfVgPf6lUVpAXRpeP2mpqVU3isIWea29b9EtYAh5pkum5gvJIpOwTevqf7TwPZ0pzLJUNc8mwbJCoj9RR/6tmJw5tgfp2NJHIeqOaV/rSO1QiJzD6RL+rO1LpqvuxfAJ05pEFqKEqGBp2hMjg5x0tEI1GJJt/7rTqsjM9yfKFSuuL35hpkKPpVifPLqkCqYV5E/JhQ4XiGWrDU84gqnKPlfGxYgIISWwWk0ODE4hAlhh3KrjHxcw/xl4Yqjcv++UALhFCneyif2qpASeOt5FfWqte13BJ6Dd7xZ1Tdx6+q2YV7HNHLadC1ZN8OPB27ZYeeZiPhHgZ/EBsbSG15DoqR3X2XmdlPlDwAKum+urEp/zyruTqCaIEkzd8MzA94p6cPIVBiGQynD4VbY1/dwb3p4oF8MwALyywz+Ooa17VPhyuZqP+fR94Qx2Ay+XAPXhWdBplSX0wcpVpBOE0GXFx1gjv2qzQBKFCcZ6pMIBSBIwy9TLHHLjeklUMHT/+w== cardno:000606477939
+      ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDTBRIAFdgiXZs9wKXBQunUpeH9cx6WCYawMK6sPqs0Vun93/vo0VEZwyYDDTBHCI6mda7yVtrbRZ/6QKG+iWa83xGIE+VQPxG4bTW88rbufTtx4tIWI0QKuDMMjQv/9xTru05vibIPm/4Ll0BpvuR5bEKIMkZfzrJ0hW2ezHwUzYTJADwUz6Dn8NElvT50DNvRrpn8Ogj1SW3gwF3pU/eyEVZznciTQMAd+tkrFMst9lE/3RlUSsFawkCY8Fo2+rjEZUmgLw4h0UB3LVX6WpHlBKHzusY+Wi2IVBFr1XrITUD2IV7lkslXSX9tHw5yF0a598ODwm+R/7xhGUyDuq4aNsM6+UbcxyrtdVzRfEDzq6LJ5xozzBTF1GZuocumj3bztIHiQBqFeK9KJMIywIr/Ealkmx7PllG2HTxY59J8eKQ/GUfsdeSwAZnJyAvrqH4h0bj+8yMZFpuw3o7grVphM0deQxziMQT80nn8U6seAuIAuFSrdlCEc9FmIC8n11NdKvBfsmeU1XlklrkRkKILZwppnurnq/4+apiDGm6Mz9wHGVlApt4HPGwQ2NN8QBZN2Mm6QLMUeEYGgPY+oUSbRR/6fASVzRBPPjjFAJC8ok3PCPcDNqtjTQKu8EmPx2mS9db+ZzlCQNPXjThbYwMZXYNdmDVr11hki6/cXdLhaw== cardno:000606401263
+      ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDIkK/dTh6KD4m7yevRvitqzsdxSUbxVIAfrD5R1zHvTmINSgjaEellvpQSY2+Wks8MoiM82Q1R1D4vLj4XKBYNLdtBTShi1M0YDydSVdQeVrBDOfpQdSgv2dZKU0tclZCIl7ABtBW7YRT9FFfGdzuriwX6E/L8Pevi2LC/0EVMaPmVLBQ5MPyjUtyQEv1Nb5M+3dvd2NeHtgK2W2Uy0yZpacvYi+fykG/rZ90vsY4FJrfkrvcu38/VwnTST+fW43krr2ISrmm9zfxewmjz0IhU5orAhpDr5RyBCEizWALYm03Y4oMzjJddHz8nbIzG8nz7dFkoNmT4S+nfwrLIbou6fKM59t5VKGJiXX5V+3mZ0bUzQWDuQ+dHIfMm5rGLYveteIXf+UH4My5lvKi3C0MEUEy0Zka1aWm83lkUeQ1jDQV6v+UqSRqsh+450ySL6S/fAZVb6XKonLhrOlGWwJhLUjC/GLo+7Q6V89DTSVXWwBtoyNJXMNBYvIEX64jeOoFdagI8jZpcI+xa27pwZQlixkUkl8ML3Rzj04AC6Qzvg3IYc4oDV/L2sn2vlzMXZxNf6ewM9/FetvQaC6VQAYYlJ0nE3duPhKHFMrF/XwkTHSstnjAi2bcbIdUCrV1a08prCiHwiw4PuMCBO8oxFysk1VJ37M4MJLLWgmdlK36r9w== cardno:000609084994
+      ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAl3OPL+efG0MTFE9pReucj1pzxaQufKI/M7UwhSIU2X js@dangerous

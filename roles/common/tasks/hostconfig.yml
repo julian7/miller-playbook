@@ -1,0 +1,17 @@
+- name: hostname
+  hostname:
+    name: miller
+- name: hostname hosts entry
+  lineinfile:
+    path: /etc/hosts
+    create: yes
+    mode: "0644"
+    owner: root
+    group: root
+    regexp: "^127\\.0\\.1\\.1"
+    line: "127.0.1.1\tmiller.local miller"
+- name: timezone
+  file:
+    path: /etc/localtime
+    src: /usr/share/zoneinfo/Europe/Budapest
+    state: link
