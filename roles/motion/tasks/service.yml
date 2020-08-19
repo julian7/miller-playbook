@@ -1,0 +1,19 @@
+- name: motion config
+  copy:
+    src: files/motion.conf
+    dest: /etc/motion/motion.conf
+    owner: root
+    group: root
+    mode: "0644"
+  notify: restart-motion
+- name: motion default setup
+  copy:
+    src: files/motion-defaults
+    dest: /etc/default/motion
+    owner: root
+    group: root
+    mode: "0644"
+- name: motion service
+  service:
+    name: motion
+    state: started

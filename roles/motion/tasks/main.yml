@@ -1,2 +1,6 @@
+- name: motion package config
+  import_tasks: package.yml
+- name: motion service
+  import_tasks: service.yml
 - name: motion nginx config
   import_tasks: nginx.yml

@@ -2,3 +2,7 @@
   service:
     name: nginx
     state: restarted
+- name: restart-motion
+  service:
+    name: motion
+    state: restarted
