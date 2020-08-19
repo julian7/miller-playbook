@@ -1,2 +1,54 @@
----
-# tasks file for roles/nginx
+- name: nginx
+  apt:
+    name: nginx-light
+  notify: restart-nginx
+- name: nginx-config
+  copy:
+    src: files/nginx-config.conf
+    dest: /etc/nginx/nginx.conf
+    owner: root
+    group: root
+    mode: "0644"
+  notify: restart-nginx
+- name: nginx-default
+  copy:
+    src: files/nginx-default.conf
+    dest: /etc/nginx/sites-available/default
+    owner: root
+    group: root
+    mode: "0644"
+  notify: restart-nginx
+- name: nginx proxy common include
+  copy:
+    src: files/nginx-proxy-common.conf
+    dest: /etc/nginx/proxy-common.conf
+    owner: root
+    group: root
+    mode: "0644"
+  notify: restart-nginx
+- name: nginx-service
+  service:
+    name: nginx
+    enabled: true
+    state: started
+- name: html dir
+  file:
+    path: /var/www/html
+    state: directory
+    owner: root
+    group: root
+    mode: "0755"
+- name: html staticassets dir
+  file:
+    path: /var/www/html/staticassets
+    state: directory
+    owner: root
+    group: root
+    mode: "0755"
+- name: main page
+  copy:
+    src: files/index.html
+    dest: /var/www/html/index.html
+    owner: root
+    group: root
+    mode: "0644"

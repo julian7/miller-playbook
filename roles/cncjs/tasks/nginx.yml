@@ -1,0 +1,8 @@
+- name: nginx-cncjs config
+  copy:
+    src: files/nginx-default-cncjs.conf
+    dest: /etc/nginx/sites-available/default-cncjs.conf
+    owner: root
+    group: root
+    mode: "0644"
+  notify: restart-nginx

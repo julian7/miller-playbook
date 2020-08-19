@@ -1,0 +1,8 @@
+- name: nginx-motion config
+  copy:
+    src: files/nginx-default-motion.conf
+    dest: /etc/nginx/sites-available/default-motion.conf
+    owner: root
+    group: root
+    mode: "0644"
+  notify: restart-nginx

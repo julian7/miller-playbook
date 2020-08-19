@@ -1,2 +1,4 @@
----
-# handlers file for roles/motion
+- name: restart-nginx
+  service:
+    name: nginx
+    state: restarted

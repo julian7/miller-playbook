@@ -1,2 +1,2 @@
----
-# tasks file for roles/motion
+- name: motion nginx config
+  import_tasks: nginx.yml
