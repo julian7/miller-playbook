@@ -1,0 +1,15 @@
+- name: cncjs.service file
+  copy:
+    src: files/systemd-cncjs.service
+    dest: /etc/systemd/system/cncjs.service
+    owner: root
+    group: root
+    mode: "0644"
+  notify:
+  - daemon-reload
+  - restart-cncjs
+- name: cncjs service
+  service:
+    name: cncjs
+    enabled: yes
+    state: started

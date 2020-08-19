@@ -1,0 +1,15 @@
+[Unit]
+Description=cnc.js
+Documentation=https://cnc.js.org/
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+Group=pi
+WorkingDirectory=/home/pi
+ExecStart=/usr/local/bin/cncjs --port 8000 --mount /tinyweb:/home/pi/tinyweb --allow-remote-access
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

@@ -1,2 +1,6 @@
+- name: package install
+  import_tasks: packages.yml
 - name: cncjs nginx config
   import_tasks: nginx.yml
+- name: cncjs service
+  import_tasks: service.yml
