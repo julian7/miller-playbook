@@ -1,2 +1,5 @@
-[main]
+[router]
 miller.local
+
+[printer]
+drucker.local
