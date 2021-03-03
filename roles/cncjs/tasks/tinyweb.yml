@@ -1,0 +1,17 @@
+- name: download tinyweb pendant
+  get_url:
+    url: https://github.com/cncjs/cncjs-pendant-tinyweb/archive/2ca0f613edf1654653e92383d74ce1fb55dc4525.zip
+    dest: /tmp/cncjs-pendant.zip
+    checksum: sha256:f72e93e59b5c8616eb0bb256292ed2077edd62a9c84806ba55baa9bc5ab7ec09
+- name: unzip tinyweb pendant
+  unarchive:
+    remote_src: true
+    creates: /tmp/cncjs-pendant-tinyweb-2ca0f613edf1654653e92383d74ce1fb55dc4525
+    src: /tmp/cncjs-pendant.zip
+    dest: /tmp
+- name: copy tinyweb over
+  copy:
+    remote_src: true
+    src: /tmp/cncjs-pendant-tinyweb-2ca0f613edf1654653e92383d74ce1fb55dc4525/src/
+    dest: /home/pi/tinyweb
+  notify: restart-cncjs

@@ -1,5 +1,7 @@
 - name: package install
   import_tasks: packages.yml
+- name: pendant install
+  import_tasks: tinyweb.yml
 - name: cncjs nginx config
   import_tasks: nginx.yml
 - name: cncjs service
