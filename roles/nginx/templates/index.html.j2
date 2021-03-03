@@ -9,17 +9,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" href="/staticassets/mini-default.min.css">
 </head>
 
 <body>
+    <div class="row">
     <h1>{{ansible_fqdn | capitalize}}</h1>
     <p>Functions</p>
-    <ul>
-        <li><a href="http://miller.local/cnc/">CNCjs</li>
-        <li><a href="/tinyweb">Tiny CNCjs</li>
-        <li><a href="/camera/">Webcam</li>
-        <li><a href="http://drucker.local/octoprint/">OctoPrint</li>
-    </ul>
+        <div class="card">
+            <div class="section"><h3>CNCjs</h3></div>
+            <div class="section media">
+                <a href="/cnc/" title="CNCjs">
+                    <img src="/staticassets/cncjs-logo.png">
+                </a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="section"><h3>Tiny CNCjs</h3></div>
+            <div class="section media">
+                <a href="/tinyweb/" title="Tiny CNCjs">
+                    <img src="/staticassets/pendant-logo.png">
+                </a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="section"><h3>Webcam</h3></div>
+            <div class="section media">
+                <a href="/camera/" title="Webcam">
+                    <img src="/staticassets/motion-logo.png">
+                </a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="section"><h3>OctoPrint</h3></div>
+            <div class="section media">
+                <a href="/octoprint/" title="OctoPrint">
+                    <img src="/staticassets/octoprint-logo.png">
+                </a>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

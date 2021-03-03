@@ -45,6 +45,19 @@
     owner: root
     group: root
     mode: "0755"
+- name: deploy static asset {{item}}
+  copy:
+    src: files/{{item}}
+    dest: /var/www/html/staticassets/{{item}}
+    owner: root
+    group: root
+    mode: "0644"
+  loop:
+    - mini-default.min.css
+    - cncjs-logo.png
+    - motion-logo.png
+    - octoprint-logo.png
+    - pendant-logo.png
 - name: main page
   template:
     src: templates/index.html.j2
