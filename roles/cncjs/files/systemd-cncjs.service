@@ -8,7 +8,7 @@ Type=simple
 User=pi
 Group=pi
 WorkingDirectory=/home/pi
-ExecStart=/usr/local/bin/cncjs --port 8000 --mount /tinyweb:/home/pi/tinyweb --allow-remote-access
+ExecStart=/usr/local/bin/cncjs --port 8000 --mount /tinyweb:/home/pi/tinyweb --watch-directory /home/pi/watch --allow-remote-access
 Restart=on-failure
 
 [Install]

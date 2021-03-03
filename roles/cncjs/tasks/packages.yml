@@ -8,3 +8,10 @@
     global: yes
     name: "cncjs@1.9.22"
     unsafe_perm: yes
+- name: cncjs watch directory
+  file:
+    path: /home/pi/watch
+    state: directory
+    owner: pi
+    group: pi
+    mode: "0755"
