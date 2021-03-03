@@ -1,10 +1,12 @@
 - name: motion config
-  copy:
-    src: files/motion.conf
+  template:
+    src: templates/motion.conf.j2
     dest: /etc/motion/motion.conf
     owner: root
     group: root
     mode: "0644"
+  vars:
+    fps: "{{motion.fps | default(30)}}"
   notify: restart-motion
 - name: motion default setup
   copy:

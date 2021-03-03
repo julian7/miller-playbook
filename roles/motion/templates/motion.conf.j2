@@ -14,7 +14,7 @@ rotate 0
 flip_axis none
 width 1280
 height 720
-framerate 30
+framerate {{fps}}
 minimum_frame_time 0
 netcam_keepalive off
 netcam_tolerant_check off
@@ -52,7 +52,7 @@ ffmpeg_output_movies off
 # ffmpeg_duplicate_frames true
 timelapse_interval 0
 timelapse_mode daily
-timelapse_fps 30
+timelapse_fps {{fps}}
 timelapse_codec mpg
 #use_extpipe on
 #extpipe ffmpeg -y -f rawvideo -pix_fmt yuv420p -video_size %wx%h -framerate %fps -i pipe:0 -vcodec libx264 -preset ultrafast -f mp4 %f.mp4
@@ -72,7 +72,7 @@ ipv6_enabled off
 stream_port 8080
 stream_quality 90
 stream_motion on
-stream_maxrate 30
+stream_maxrate {{fps}}
 stream_localhost off
 stream_limit 0
 stream_auth_method 0
