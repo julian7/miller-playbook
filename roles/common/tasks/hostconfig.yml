@@ -1,6 +1,6 @@
 - name: hostname
   hostname:
-    name: miller
+    name: "{{hostname | default('miller')}}"
 - name: hostname hosts entry
   lineinfile:
     path: /etc/hosts
