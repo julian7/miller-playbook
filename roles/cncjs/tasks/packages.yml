@@ -6,7 +6,7 @@
 - name: cncjs package
   npm:
     global: yes
-    name: "cncjs@1.9.22"
+    name: "cncjs@1.10.5"
     unsafe_perm: yes
 - name: cncjs watch directory
   file:
