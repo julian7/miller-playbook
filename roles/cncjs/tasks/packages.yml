@@ -10,8 +10,8 @@
     unsafe_perm: yes
 - name: cncjs watch directory
   file:
-    path: /home/pi/watch
+    path: /home/js/watch
     state: directory
-    owner: pi
-    group: pi
+    owner: js
+    group: js
     mode: "0755"

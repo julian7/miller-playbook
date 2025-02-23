@@ -1,1 +1,2 @@
 hostname: miller
+ansible_user: js

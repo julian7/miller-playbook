@@ -1,8 +1,12 @@
+- name: pi group
+  group:
+    name: pi
+    gid: 1001
 - name: pi user
   user:
     name: pi
     comment: PI
-    uid: 1000
+    uid: 1001
     group: pi
     shell: /bin/bash
     append: true
