@@ -1,17 +1,17 @@
 - name: nodejs and required modules
-  apt:
+  ansible.builtin.apt:
     name:
     - nodejs
     - npm
 - name: cncjs package
-  npm:
+  ansible.builtin.npm:
     global: yes
-    name: "cncjs@1.10.5"
+    name: "cncjs@1.11.0"
     unsafe_perm: yes
 - name: cncjs watch directory
-  file:
-    path: /home/js/watch
+  ansible.builtin.file:
+    path: "/home/{{ cncjs_user }}/watch"
     state: directory
-    owner: js
-    group: js
+    owner: "{{ cncjs_user }}"
+    group: "{{ cncjs_group }}"
     mode: "0755"

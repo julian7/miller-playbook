@@ -1,6 +1,6 @@
 - name: packages
   import_tasks: packages.yml
-- name: users
-  import_tasks: users.yml
+# - name: users
+#   import_tasks: users.yml
 - name: hostconfig
   import_tasks: hostconfig.yml

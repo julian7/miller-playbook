@@ -1,5 +1,5 @@
 - name: nginx-cncjs config
-  copy:
+  ansible.builtin.copy:
     src: files/nginx-default-cncjs.conf
     dest: /etc/nginx/sites-available/default-cncjs.conf
     owner: root

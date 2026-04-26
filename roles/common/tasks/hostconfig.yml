@@ -9,7 +9,7 @@
     owner: root
     group: root
     regexp: "^127\\.0\\.1\\.1"
-    line: "127.0.1.1\tmiller.local miller"
+    line: "127.0.1.1\t{{hostname | default('miller')}}.local {{hostname | default('miller')}}"
 - name: timezone
   file:
     path: /etc/localtime

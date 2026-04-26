@@ -1,2 +1,4 @@
 hostname: miller
 ansible_user: js
+cncjs_user: js
+cncjs_group: js

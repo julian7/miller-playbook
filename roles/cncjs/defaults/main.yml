@@ -1,2 +1,3 @@
 ---
-# defaults file for roles/cncjs
+cncjs_user: pi
+cncjs_group: pi
