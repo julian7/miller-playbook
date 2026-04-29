@@ -1,0 +1,4 @@
+- name: caddyserver dependencies
+  ansible.builtin.import_tasks: install.yml
+- name: configure caddyserver
+  ansible.builtin.import_tasks: config.yml

@@ -5,6 +5,10 @@
   service:
     name: nginx
     state: restarted
+- name: restart-caddy
+  service:
+    name: caddy
+    state: restarted
 - name: restart-cncjs
   service:
     name: cncjs

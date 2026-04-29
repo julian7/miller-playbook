@@ -1,0 +1,38 @@
+- name: Create directories for Caddy
+  ansible.builtin.file:
+    path: /etc/caddy/{{ item }}
+    state: directory
+    owner: caddy
+    group: caddy
+    mode: '0755'
+  loop:
+  - pki
+  - conf.d
+
+- name: Upload remote Root CA certificate
+  ansible.builtin.copy:
+    src: files/root_ca.crt
+    dest: /etc/caddy/pki/root_ca.crt
+    owner: caddy
+    group: caddy
+    mode: '0644'
+
+- name: Install remote CA into system trust store
+  ansible.builtin.copy:
+    src: files/root_ca.crt
+    dest: /usr/local/share/ca-certificates/local_root.crt
+    mode: '0644'
+  register: ca_cert
+
+- name: Update CA certificates
+  ansible.builtin.command: update-ca-certificates
+  when: ca_cert.changed
+
+- name: Deploy basic Caddyfile
+  ansible.builtin.template:
+    src: templates/Caddyfile.j2
+    dest: /etc/caddy/Caddyfile
+    owner: root
+    group: root
+    mode: '0644'
+  notify: Reload Caddy

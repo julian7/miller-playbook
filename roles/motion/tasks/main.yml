@@ -2,5 +2,5 @@
   import_tasks: package.yml
 - name: motion service
   import_tasks: service.yml
-- name: motion nginx config
-  import_tasks: nginx.yml
+- name: motion webserver config
+  import_tasks: webserver.yml

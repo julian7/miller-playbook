@@ -1,6 +1,6 @@
 # - name: install octoprint
 #   import_tasks: virtualenv.yml
-- name: octoprint nginx config
-  import_tasks: nginx.yml
+- name: octoprint webserver config
+  import_tasks: webserver.yml
 - name: octoprint service
   import_tasks: service.yml

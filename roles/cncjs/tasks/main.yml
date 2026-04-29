@@ -2,7 +2,7 @@
   ansible.builtin.import_tasks: packages.yml
 - name: pendant install
   ansible.builtin.import_tasks: tinyweb.yml
-- name: cncjs nginx config
-  ansible.builtin.import_tasks: nginx.yml
+- name: cncjs webserver config
+  ansible.builtin.import_tasks: webserver.yml
 - name: cncjs service
   ansible.builtin.import_tasks: service.yml

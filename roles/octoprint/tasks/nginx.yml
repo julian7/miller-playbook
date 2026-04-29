@@ -1,8 +1,0 @@
-- name: nginx-octoprint config
-  copy:
-    src: files/nginx-default-octoprint.conf
-    dest: /etc/nginx/sites-available/default-octoprint.conf
-    owner: root
-    group: root
-    mode: "0644"
-  notify: restart-nginx

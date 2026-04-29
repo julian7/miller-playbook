@@ -1,0 +1,3 @@
+handle_path /camera/* {
+    reverse_proxy h2c://localhost:8080
+}

@@ -1,0 +1,16 @@
+- name: stop-nginx
+  ansible.builtin.service:
+    name: nginx
+    state: stopped
+  ignore_errors: true
+- name: remove-nginx
+  ansible.builtin.apt:
+    name: nginx-light
+    state: absent
+- name: nginx-files
+  ansible.builtin.file:
+    path: "/etc/nginx/{{ item }}"
+    state: absent
+  loop:
+  - "sites-available/default"
+  - "proxy-common.conf"

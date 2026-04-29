@@ -31,37 +31,3 @@
     name: nginx
     enabled: true
     state: started
-- name: html dir
-  file:
-    path: /var/www/html
-    state: directory
-    owner: root
-    group: root
-    mode: "0755"
-- name: html staticassets dir
-  file:
-    path: /var/www/html/staticassets
-    state: directory
-    owner: root
-    group: root
-    mode: "0755"
-- name: deploy static asset
-  copy:
-    src: files/{{item}}
-    dest: /var/www/html/staticassets/{{item}}
-    owner: root
-    group: root
-    mode: "0644"
-  loop:
-    - mini-default.min.css
-    - cncjs-logo.png
-    - motion-logo.png
-    - octoprint-logo.png
-    - pendant-logo.png
-- name: main page
-  template:
-    src: templates/index.html.j2
-    dest: /var/www/html/index.html
-    owner: root
-    group: root
-    mode: "0644"

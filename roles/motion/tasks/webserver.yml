@@ -1,0 +1,20 @@
+- name: Get details about installed packages
+  ansible.builtin.package_facts:
+- name: nginx-motion config
+  ansible.builtin.copy:
+    src: files/nginx-default-motion.conf
+    dest: /etc/nginx/sites-available/default-motion.conf
+    owner: root
+    group: root
+    mode: "0644"
+  notify: restart-nginx
+  when: ansible_facts["packages"]["nginx"] is defined
+- name: caddy-motion config
+  ansible.builtin.copy:
+    src: files/motion.caddy
+    dest: /etc/caddy/conf.d/motion.caddy
+    owner: root
+    group: root
+    mode: "0644"
+  notify: restart-caddy
+  when: ansible_facts["packages"]["caddy"] is defined

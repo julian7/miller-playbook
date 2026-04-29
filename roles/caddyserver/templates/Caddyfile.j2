@@ -1,0 +1,11 @@
+{{ hostname | default("miller") }}.local {
+	tls {
+		issuer acme {
+			dir https://beez.local:9000/acme/acme/directory
+			trusted_roots /etc/caddy/pki/root_ca.crt
+		}
+	}
+	root * /var/www/html
+	file_server
+	import /etc/caddy/conf.d/*.caddy
+}

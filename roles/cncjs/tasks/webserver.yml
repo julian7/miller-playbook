@@ -1,0 +1,20 @@
+- name: Get details about installed packages
+  ansible.builtin.package_facts:
+- name: nginx-cncjs config
+  ansible.builtin.copy:
+    src: files/nginx-default-cncjs.conf
+    dest: /etc/nginx/sites-available/default-cncjs.conf
+    owner: root
+    group: root
+    mode: "0644"
+  notify: restart-nginx
+  when: ansible_facts["packages"]["nginx"] is defined
+- name: nginx-cncjs config
+  ansible.builtin.copy:
+    src: files/cncjs.caddy
+    dest: /etc/caddy/conf.d/cncjs.caddy
+    owner: root
+    group: root
+    mode: "0644"
+  notify: restart-caddy
+  when: ansible_facts["packages"]["caddy"] is defined

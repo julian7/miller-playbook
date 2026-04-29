@@ -1,0 +1,8 @@
+handle_path /cnc/ {
+    rewrite * /
+    reverse_proxy h2c://localhost:8000
+}
+
+location /* {
+    reverse_proxy h2c://localhost:8000
+}

@@ -1,0 +1,5 @@
+handle_path /octoprint/* {
+    reverse_proxy http://localhost:5000 {
+        header_up X-Script-Name /octoprint
+    }
+}
