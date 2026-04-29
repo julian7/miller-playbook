@@ -1,0 +1,6 @@
+- hosts: all
+  roles:
+  - webroot
+  - remove-nginx
+  - caddyserver
+  become: yes
