@@ -36,3 +36,20 @@
     group: root
     mode: '0644'
   notify: Reload Caddy
+
+- name: Prepare caddy server systemd override dir
+  ansible.builtin.file:
+    path: /etc/systemd/system/caddy.service.d
+    state: directory
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Delay caddyserver to start after time sync
+  ansible.builtin.copy:
+    src: files/caddyfile-override.conf
+    dest: /etc/systemd/system/caddy.service.d/override.conf
+    owner: root
+    group: root
+    mode: '0644'
+  notify: Reload Caddy
